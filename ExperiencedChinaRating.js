@@ -1,6 +1,6 @@
-import { Rating } from "./Rating";
+import { Rating } from "./Rating.js";
 
-class ExperiencedChinaRating extends Rating
+export class ExperiencedChinaRating extends Rating
 {
 
 }

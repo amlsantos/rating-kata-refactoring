@@ -1,7 +1,9 @@
-import {Rating} from "./Rating.js";
+import { RatingFactory } from "./RatingFactory.js";
 
 function rating(voyage, history) {
-    return new Rating(voyage, history).value;
+    var rating = RatingFactory.Create(voyage, history);
+
+    return rating.value;
 }
 
 /** the client code **/
