@@ -54,9 +54,6 @@ export class Rating {
     
         result += this.history.filter(v => v.profit < 0).length;
     
-        if (this.voyage.zone === "china" && this.hasChinaHistory())
-            result -= 2;
-    
         return Math.max(result, 0);
     }
 
