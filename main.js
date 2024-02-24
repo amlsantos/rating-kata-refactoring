@@ -1,4 +1,4 @@
-import {Rating} from "./rating.js";
+import {Rating} from "./Rating.js";
 
 function rating(voyage, history) {
     return new Rating(voyage, history).value;
