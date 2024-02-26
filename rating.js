@@ -19,19 +19,18 @@ export class Rating {
         let result = 2;
         if (this.voyage.zone === "china") result += 1;
         if (this.voyage.zone === "eastindies") result += 1;
-        if (this.voyage.zone === "china" && this.hasChinaHistory()) {
-            result += 3;
+        
+        result += this.voyageAndHistoryLengthFactor;
 
-            if (this.history.length > 10) result += 1;
-            if (this.voyage.length > 12) result += 1;
-            if (this.voyage.length > 18) result = 1;
-        }
-        else 
-        {
-            if (this.history.length > 8) result += 1;
-            if (this.voyage.length > 14) result = 1;
-        }
+        return result;
+    }
 
+    get voyageAndHistoryLengthFactor() {
+        let result = 0;
+
+        if (this.history.length > 8) result += 1;
+        if (this.voyage.length > 14) result = 1;
+        
         return result;
     }
 
