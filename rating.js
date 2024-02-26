@@ -20,16 +20,14 @@ export class Rating {
         if (this.voyage.zone === "china") result += 1;
         if (this.voyage.zone === "eastindies") result += 1;
         
-        result += this.voyageAndHistoryLengthFactor;
+        result += this.voyageLengthFactor;
+        result += this.historyLengthFactor;
 
         return result;
     }
 
-    get voyageAndHistoryLengthFactor() {
+    get voyageLengthFactor() {
         let result = 0;
-
-        if (this.history.length > 8)
-            this.historyLengthFactor;
 
         if (this.voyage.length > 14)
             result = 1;
@@ -43,6 +41,7 @@ export class Rating {
 
     get voyageRisk() {
         let result = 1;
+
         if (this.voyage.length > 4) 
             result += 2;
         if (this.voyage.length > 8)

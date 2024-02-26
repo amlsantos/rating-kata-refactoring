@@ -7,11 +7,10 @@ export class ExperiencedChinaRating extends Rating
         return Math.max(result, 0);
     }
 
-    get voyageAndHistoryLengthFactor() {
+    get voyageLengthFactor() {
         let result = 0;
         
         result += 3;
-        result += this.historyLengthFactor;
 
         if (this.voyage.length > 12)
             result += 1;
