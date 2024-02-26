@@ -5,11 +5,11 @@ export class Rating {
     }
 
     get value() {
-        const vpf = this.voyageProfitFactor;
-        const vr = this.voyageRisk;
-        const chr = this.captainHistoryRisk;
+        const profit = this.voyageProfitFactor;
+        const risk = this.voyageRisk;
+        const history = this.captainHistoryRisk;
 
-        if (vpf * 3 > (vr + chr * 2))
+        if (profit * 3 > (risk + history * 2))
             return "A";
         else
             return "B";
